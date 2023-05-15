@@ -29,7 +29,7 @@ pipeline {
 		}
 	     }
 	}
-	/*stage('Execute the Terraform File') {
+	stage('Execute the Terraform File') {
 		steps {
 			sh 'echo "123456" | sudo -S chmod 600 gnan.pem'
 			sh 'terraform init'
@@ -38,6 +38,6 @@ pipeline {
 			sh 'terraform apply --auto-approve'
 			
 		}
-	}*/
+	}
   }
 }
