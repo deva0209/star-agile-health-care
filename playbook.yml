@@ -9,4 +9,4 @@
   - name: Docker Start
     command: sudo service docker start
   - name: Deploy Docker Container
-    command: docker run -itd -p 8081:8081 --name medicure deva0209/medicure:latest
+    command: docker run -itd -p 8082:8082 --name medicure deva0209/medicure:latest
