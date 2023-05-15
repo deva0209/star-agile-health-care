@@ -1,0 +1,12 @@
+- hosts: all
+  become: true
+  connection: ssh
+  tasks:
+  - name: Yum update
+    command: sudo yum update
+  - name: Install Docker
+    command: sudo yum install docker -y
+  - name: Docker Start
+    command: sudo service docker start
+  - name: Deploy Docker Container
+    command: docker run -itd -p 8081:8081 --name financeme deva0209/medicure:latest
