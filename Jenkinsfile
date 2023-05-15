@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Repo Cloning') {
             steps {
-               git branch: 'main', url: 'https://github.com/deva0209/star-agile-banking-finance'
+               git branch: 'master', url: 'https://github.com/deva0209/star-agile-health-care.git'
             }
         }
         stage('Packaging repo') {
@@ -18,14 +18,14 @@ pipeline {
         }
 	stage('Build Docker Image') {
 		steps {
-			sh 'docker build -t deva0209/financeme:latest .'	
+			sh 'docker build -t deva0209/medicure:latest .'	
 		}
 	}
 	stage('Push image to Docker Hub') {
 	     steps {
 		withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USER')]) {
 			sh "docker login -u ${env.DOCKERHUB_USER} -p ${env.DOCKERHUB_PASSWORD}"
-			sh 'docker push deva0209/financeme:latest'
+			sh 'docker push deva0209/medicure:latest'
 		}
 	     }
 	}
