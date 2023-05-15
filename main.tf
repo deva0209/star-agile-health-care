@@ -1,9 +1,3 @@
-provider "aws" {
-  region     = "ap-south-1"
-  access_key = "AKIAUEQBJJJTRR3GMQ2S"
-  secret_key = "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"
-}
-
 resource "aws_instance" "test-server" {
   ami           = "ami-0b08bfc6ff7069aff" 
   instance_type = "t2.micro"
